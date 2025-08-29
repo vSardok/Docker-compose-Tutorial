@@ -1,12 +1,33 @@
-Run:
+-- Run:
 
 docker compose up
 
-Go to:
+-- Go to:
 
 http://localhost:8000/ 
 
-Stop:
+-- Stop:
 
 docker compose down
+
+-- Update yaml:
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:5000"
+    develop:
+      watch:
+        - action: sync
+          path: .
+          target: /code
+  redis:
+    image: "redis:alpine"
+
+-- Run:
+
+docker compose watch
+
+-- Refresh http://localhost:8000/ and watch the counter go up
 
