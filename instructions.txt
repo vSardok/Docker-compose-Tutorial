@@ -31,3 +31,9 @@ docker compose watch
 
 -- Refresh http://localhost:8000/ and watch the counter go up
 
+-- Update app.py:
+
+return f'Hello from Docker! I have been seen {count} times.\n'
+
+-- Refresh http://localhost:8000/ once again and see the changes live without resetting the container.
+
