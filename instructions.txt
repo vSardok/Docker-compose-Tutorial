@@ -37,3 +37,27 @@ return f'Hello from Docker! I have been seen {count} times.\n'
 
 -- Refresh http://localhost:8000/ once again and see the changes live without resetting the container.
 
+-- Create new infra.yaml file:
+
+services:
+  redis:
+    image: "redis:alpine"
+
+-- Remove redis from compose.yaml and include the path to infra.yaml:
+
+include:
+   - infra.yaml
+services:
+  web:
+    build: .
+    ports:
+      - "8000:5000"
+    develop:
+      watch:
+        - action: sync
+          path: .
+          target: /code
+
+-- Run:
+
+docker compose up
