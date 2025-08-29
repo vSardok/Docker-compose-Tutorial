@@ -1,0 +1,12 @@
+Run:
+
+docker compose up
+
+Go to:
+
+http://localhost:8000/ 
+
+Stop:
+
+docker compose down
+
