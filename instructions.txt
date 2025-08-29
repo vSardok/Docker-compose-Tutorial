@@ -61,3 +61,13 @@ services:
 -- Run:
 
 docker compose up
+
+-- Run commands with -d to run the services in the background instead of taking over your terminal:
+
+docker compose up -d
+
+docker compose ps
+
+-- Stop:
+
+docker compose stop
